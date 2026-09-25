@@ -1,0 +1,24 @@
+{
+  "vault_id": "VAULT-OBSIDIAN-09",
+  "classification": "TOP_SECRET_FORENSICS",
+  "carved_at": "2026-09-25T11:00:00Z",
+  "shannon_entropy": 7.914,
+  "reconstructed_clusters": 18,
+  "integrity_status": "CRYPTOGRAPHICALLY_VERIFIED",
+  "ledger_entries": [
+    {
+      "id": "L-01",
+      "routing": "OFFSHORE-SWIFT-891",
+      "amount": 450000,
+      "currency": "USD",
+      "hash": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"
+    },
+    {
+      "id": "L-02",
+      "routing": "DIRECT-SETTLEMENT-02",
+      "amount": 1200000,
+      "currency": "EUR",
+      "hash": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
+    }
+  ]
+}

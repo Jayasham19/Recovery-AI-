@@ -1,0 +1,7 @@
+[FORENSIC_LOG]
+Timestamp: 2026-09-25T12:00:00Z
+Case: Financial Audit Case 2026-09
+Investigator: Special Agent V. Vance
+Flagged Transaction: $4,500,000 to offshore escrow account.
+Status: CRITICAL EVIDENCE VERIFIED
+[END_LOG]

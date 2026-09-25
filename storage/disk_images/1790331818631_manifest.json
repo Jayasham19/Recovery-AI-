@@ -1,0 +1,154 @@
+{
+  "severity": "medium",
+  "modes": [
+    "truncate",
+    "bitrot",
+    "header_strip",
+    "byte_delete",
+    "garbage_insert",
+    "fragment"
+  ],
+  "seed": 1337,
+  "files": [
+    {
+      "originalFile": "Evolving_Battery_Management_Systems_for_EV.pdf",
+      "originalSize": 1399557,
+      "originalSHA256": "b2917feffe3f006cebdf119d59421b8def496adc7aef4eebfd73a28ce735550f",
+      "corruptedVariants": [
+        {
+          "mode": "truncate",
+          "keptFraction": 0.6,
+          "expectedRecovery": "PARTIALLY_RECOVERED",
+          "note": "File cut off partway through; end structure is missing.",
+          "outputFile": "Evolving_Battery_Management_Systems_for_EV__truncate.pdf",
+          "damagedSize": 839734,
+          "damagedSHA256": "ac85583b1bf08e4fcaf7ef966e6fd6129fa4563271f6a633d29d0e4dcedc261d"
+        },
+        {
+          "mode": "bitrot",
+          "regionsCorrupted": 5,
+          "regionSize": 40,
+          "corruptedOffsets": [
+            1295521,
+            1118338,
+            767239,
+            1197429,
+            1228485
+          ],
+          "expectedRecovery": "PARTIALLY_RECOVERED",
+          "note": "Header/footer intact; scattered internal regions zeroed out.",
+          "outputFile": "Evolving_Battery_Management_Systems_for_EV__bitrot.pdf",
+          "damagedSize": 1399557,
+          "damagedSHA256": "e1c312dbdd07cbd86644a1b648ecd86050616fb68b442aa8537621fdf0311f5f"
+        },
+        {
+          "mode": "header_strip",
+          "strippedBytes": 12,
+          "expectedRecovery": "UNRECOVERABLE_BY_SIGNATURE_ALONE",
+          "note": "File signature/magic-number is gone; needs content-based detection, not just carving.",
+          "outputFile": "Evolving_Battery_Management_Systems_for_EV__header_strip.pdf",
+          "damagedSize": 1399545,
+          "damagedSHA256": "b5850f1ee02636d64d1822d7bfd8be8ab7bac4b364438168e2a67cfac5d2f28a"
+        },
+        {
+          "mode": "byte_delete",
+          "deletedStart": 1117336,
+          "deletedSize": 111964,
+          "expectedRecovery": "PARTIALLY_RECOVERED",
+          "note": "A chunk was cut out of the middle; everything after the gap is now misaligned.",
+          "outputFile": "Evolving_Battery_Management_Systems_for_EV__byte_delete.pdf",
+          "damagedSize": 1287593,
+          "damagedSHA256": "70bf11ea112d2a6bf793311cf807994777e92a709dd7c77ee471881f37b2fa1d"
+        },
+        {
+          "mode": "garbage_insert",
+          "insertions": [
+            {
+              "position": 347471,
+              "size": 80
+            },
+            {
+              "position": 448271,
+              "size": 80
+            }
+          ],
+          "expectedRecovery": "PARTIALLY_RECOVERED",
+          "note": "Random junk bytes injected mid-file; simulates overlapping/misaligned writes.",
+          "outputFile": "Evolving_Battery_Management_Systems_for_EV__garbage_insert.pdf",
+          "damagedSize": 1399717,
+          "damagedSHA256": "416301a73b734b285fb61b15bb050f140b9c04424d573e4fafddb0dff8672b83"
+        },
+        {
+          "mode": "fragment",
+          "numChunks": 5,
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "diskOrder": [
+            1,
+            4,
+            3,
+            0,
+            2
+          ],
+          "expectedRecovery": "PARTIALLY_RECOVERED_IF_REORDERED_CORRECTLY",
+          "note": "Chunks are out of order with noise gaps; needs relationship analysis + reconstruction to fix, not simple carving.",
+          "outputFile": "Evolving_Battery_Management_Systems_for_EV__fragment.pdf",
+          "damagedSize": 1399754,
+          "damagedSHA256": "a7050e208e4aa61067e8cf48248c6fcb2bd72be00018c2a50c28043ee80a1826"
+        }
+      ]
+    }
+  ],
+  "diskImage": {
+    "path": "synthetic_disk.raw",
+    "sha256": "6bd17b93c5ba390f412fae40640e07443f2d33ae95fb1b979b0154cac81cdded",
+    "items": [
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV.pdf (clean)",
+        "diskOffset": 332,
+        "sha256": "b2917feffe3f006cebdf119d59421b8def496adc7aef4eebfd73a28ce735550f"
+      },
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV__truncate.pdf",
+        "diskOffset": 1400846,
+        "mode": "truncate",
+        "sha256": "ac85583b1bf08e4fcaf7ef966e6fd6129fa4563271f6a633d29d0e4dcedc261d"
+      },
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV__bitrot.pdf",
+        "diskOffset": 2241613,
+        "mode": "bitrot",
+        "sha256": "e1c312dbdd07cbd86644a1b648ecd86050616fb68b442aa8537621fdf0311f5f"
+      },
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV__header_strip.pdf",
+        "diskOffset": 3641769,
+        "mode": "header_strip",
+        "sha256": "b5850f1ee02636d64d1822d7bfd8be8ab7bac4b364438168e2a67cfac5d2f28a"
+      },
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV__byte_delete.pdf",
+        "diskOffset": 5042227,
+        "mode": "byte_delete",
+        "sha256": "70bf11ea112d2a6bf793311cf807994777e92a709dd7c77ee471881f37b2fa1d"
+      },
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV__garbage_insert.pdf",
+        "diskOffset": 6330981,
+        "mode": "garbage_insert",
+        "sha256": "416301a73b734b285fb61b15bb050f140b9c04424d573e4fafddb0dff8672b83"
+      },
+      {
+        "label": "Evolving_Battery_Management_Systems_for_EV__fragment.pdf",
+        "diskOffset": 7731725,
+        "mode": "fragment",
+        "sha256": "a7050e208e4aa61067e8cf48248c6fcb2bd72be00018c2a50c28043ee80a1826"
+      }
+    ]
+  }
+}

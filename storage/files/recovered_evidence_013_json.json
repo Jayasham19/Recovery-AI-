@@ -1,0 +1,8 @@
+[FORENSIC_JSON]
+{
+  "caseId": "CASE-2922",
+  "investigator": "Special Agent Abhishek",
+  "auditStatus": "VERIFIED_VALID",
+  "reconstructedFormats": ["PDF", "JPEG", "PNG", "DOCX", "XLSX", "MP4", "WAV", "PYTHON", "SQLITE", "JSON"]
+}
+[END_JSON]
